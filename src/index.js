@@ -1,17 +1,27 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './App.css';
+import { createRoot } from 'react-dom/client';
+import { Stage, Layer, Rect, Text, Circle, Line } from 'react-konva';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+var randomColor = Math.floor(Math.random()*16777215).toString(16);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App = () => {
+  return (
+    <Stage width={window.innerWidth} height={window.innerHeight}>
+      <Layer>
+        <Text text="Refresh to change color" fontSize={15} />
+        <Rect
+          x={20}
+          y={50}
+          width={102}
+          height={100}
+          fill={randomColor}
+        />
+      </Layer>
+    </Stage>
+  );
+};
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<App />);

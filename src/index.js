@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
-import Konva from 'konva';
 import { Stage, Layer, Rect, Text } from 'react-konva';
 
 const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
@@ -14,16 +13,15 @@ const App = () => {
   return (
     <Stage width={window.innerWidth} height={window.innerHeight}>
       <Layer>
-        <Text text="Refresh to change color" fontSize={15} />
         <Rect
-          x={50}
-          y={50}
-          width={100}
-          height={50}
+          x={window.innerWidth / 2 - 100} // half of the stage width minus half of the rectangle width
+          y={window.innerHeight / 2 - 100} // half of the stage height minus half of the rectangle height
+          width={200}
+          height={200}
           fill={randomColor}
-          stroke={'black'}
           strokeWidth={5}
           onClick={handleRefresh}
+          align="center"
         />
       </Layer>
     </Stage>

@@ -21,26 +21,4 @@ body {
   font-weight: 400;
   line-height: 1;
   background-color: #f4f4f4;
-  margin: auto;
-  max-width: 640px;
-  padding: 32px;
-  position: relative;
-}
-
-section {
-  display: center;
-  font-family: "Inter";
-  display: block;
-  margin-bottom: 30px;
-  line-height: 150%;
-}
-
-/* header, h1, h2, h3 */
-
-header {
-  white-space: nowrap;
-  display: block;
-  font-size: 16px;
-  margin-bottom: 30px;
-  margin-right: 10vh;
 }
